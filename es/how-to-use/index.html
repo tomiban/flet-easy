@@ -1,0 +1,1487 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Flet-Easy is a user-friendly add-on package for Flet, offering a cleaner code structure with numerous customizable features like JWT, routers, decorators, middleware and more.">
+      
+      
+        <meta name="author" content="Daxexs">
+      
+      
+        <link rel="canonical" href="https://tomiban.github.io/flet-easy/es/how-to-use/">
+      
+      
+        <link rel="prev" href="../begin/">
+      
+      
+        <link rel="next" href="../run-the-app/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+    
+    
+      
+        <title>Cómo usar - Flet-Easy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lexend";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#como-usar" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're not viewing the latest version.
+  <a href="../../..">
+    <strong>Click here to go to latest.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Flet-Easy" class="md-header__button md-logo" aria-label="Flet-Easy" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Flet-Easy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cómo usar
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tomiban/flet-easy" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tomiban/flet-easy
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Flet-Easy" class="md-nav__button md-logo" aria-label="Flet-Easy" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Flet-Easy
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tomiban/flet-easy" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tomiban/flet-easy
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../begin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comenzar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cómo usar
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cómo usar
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fleteasy" class="md-nav__link">
+    <span class="md-ellipsis">
+      FletEasy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FletEasy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      📷 Demo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoradores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decoradores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-crear-una-nueva-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cómo crear una nueva página?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo crear una nueva página?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decorador-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decorador page
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasy-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasy (data)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Datasy (data)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Demo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../run-the-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejecutar la aplicación
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli-to-create-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLI para crear app
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-routes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rutas dinámicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-sharing-between-pages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compartir datos entre páginas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Agregar páginas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Agregar páginas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-pages/through-decorators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A través de decoradores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-pages/by-means-of-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Por medio de funciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-pages/through-classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A través de clases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-pages/in-automatic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    De forma automática
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aplicación personalizada
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Aplicación personalizada
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customized-app/route-protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protección de rutas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customized-app/general-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuraciones generales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customized-app/control-view-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuración de vista de control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customized-app/page-404/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Página 404
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customized-app/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eventos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Eventos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Eventos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/keyboard-event/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evento de teclado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/on-resize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Al redimensionar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../middleware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Middleware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basic-jwt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JWT Básico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ref
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../responsiveControlsy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ResponsiveControlsy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../working-with-other-apps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trabajando con otras apps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fleteasy" class="md-nav__link">
+    <span class="md-ellipsis">
+      FletEasy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FletEasy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      📷 Demo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoradores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decoradores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-crear-una-nueva-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cómo crear una nueva página?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Cómo crear una nueva página?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decorador-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decorador page
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasy-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasy (data)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Datasy (data)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Demo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/tomiban/flet-easy/edit/main/docs/es/how-to-use.md" title="Editar esta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="como-usar">Cómo usar<a class="headerlink" href="#como-usar" title="Permanent link">&para;</a></h1>
+<p><code>Flet-Easy</code> presenta una estructura que se adapta a cómo el usuario quiera implementarla, ya que permite tener varios archivos y conectarlos a un archivo principal.</p>
+<ul>
+<li>Para usar <code>Flet-easy</code>, primero tenemos que usar la clase <code>FletEasy</code> y crear un objeto donde hacer las configuraciones de la aplicación.</li>
+</ul>
+<h2 id="fleteasy">FletEasy<a class="headerlink" href="#fleteasy" title="Permanent link">&para;</a></h2>
+<p>Creamos el objeto de la aplicación, en el cual puedes configurar:</p>
+<ul>
+<li><code>route_prefix</code>: La ruta que es diferente de <code>/</code></li>
+<li><code>route_init</code>: La ruta inicial para inicializar la app, por defecto es <code>/</code></li>
+<li><code>route_login</code>: La ruta a la que se redirigirá cuando la app tenga configurada la protección de rutas</li>
+<li><code>on_Keyboard</code>: Habilita el evento on_Keyboard, por defecto está deshabilitado (False). <a href="/flet-easy/0.2.0/events/keyboard-event/">[<code>Ver más</code>]</a></li>
+<li><code>on_resize</code>: Activa el evento on_resize, por defecto está deshabilitado (False). <a href="/flet-easy/0.2.0/events/on-resize/">[<code>Ver más</code>]</a></li>
+<li><code>secret_key</code>: Se usa con la clase <code>SecretKey</code> de FletEasy, para configurar JWT o almacenamiento del cliente. <a href="/flet-easy/0.2.0/basic-jwt/">[<code>Ver más</code>]</a></li>
+<li><code>path_views</code>: Configuración de la carpeta donde están los archivos .py de las páginas, se usa la clase <code>Path</code> para configurarlo. <a href="/flet-easy/0.2.0/add-pages/in-automatic/">[<code>Ver más</code>]</a></li>
+</ul>
+<h3 id="demo">📷 <strong>Demo</strong><a class="headerlink" href="#demo" title="Permanent link">&para;</a></h3>
+<p><img alt="FletEasy" src="assets/images/v0.2.0/FletEasy.png" title="FletEasy" /></p>
+<h3 id="ejemplo"><strong>Ejemplo</strong><a class="headerlink" href="#ejemplo" title="Permanent link">&para;</a></h3>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">flet_easy</span> <span class="k">as</span> <span class="nn">fs</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">app</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">FletEasy</span><span class="p">(</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">route_prefix</span><span class="o">=</span><span class="s1">&#39;/FletEasy&#39;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">route_init</span><span class="o">=</span><span class="s1">&#39;/FletEasy/home&#39;</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="metodos">Métodos<a class="headerlink" href="#metodos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>run()</code>: Ejecuta la app. Soporta async, fastapi y export_asgi_app. <a href="/flet-easy/0.2.0/run-the-app/">[<code>Ver más</code>]</a></li>
+<li><code>add_middleware()</code>: Requiere una lista de funciones, la función que actuará como middleware recibirá como único parámetro obligatorio [<a href="/flet-easy/0.2.0/how-to-use/#datasy-data">data:Datasy</a>] y su estructura o contenido puede variar según el contexto y los requisitos específicos del middleware. <a href="/flet-easy/0.2.0/middleware/#general-application">[<code>Ver más</code>]</a></li>
+<li><code>add_pages()</code>: Añade páginas desde otros archivos. En la lista se ingresan objetos de clase <a href="/flet-easy/0.2.0/add-pages/through-decorators/#addpagesy">AddPagesy</a> desde otros archivos .py. <a href="/flet-easy/0.2.0/add-pages/through-decorators/#adding-pages">[<code>Ver más</code>]</a></li>
+<li><code>add_routes()</code>: Añade rutas sin el uso de decoradores. <a href="/flet-easy/0.2.0/add-pages/by-means-of-functions/#add-routes">[<code>Ver más</code>]</a></li>
+</ul>
+<h3 id="decoradores">Decoradores<a class="headerlink" href="#decoradores" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>page()</code>: Decorador para añadir una nueva página a la app. Este método decorador actúa de manera similar a la clase <code>Pagesy</code> y contiene los mismos parámetros requeridos. <a href="/flet-easy/0.2.0/how-to-use/#decorator-page">[<code>Ver más</code>]</a></li>
+<li><code>config</code>: Decorador para añadir una configuración personalizada a la app. <a href="/flet-easy/0.2.0/customized-app/general-settings/">[<code>Ver más</code>]</a></li>
+<li><code>login</code>: Decorador para añadir una configuración de inicio de sesión a la app (protected_route). <a href="/flet-easy/0.2.0/customized-app/route-protection/">[<code>Ver más</code>]</a></li>
+<li><code>page_404()</code>: Decorador para añadir una nueva página personalizada cuando no se encuentra una ruta en la app. <a href="/flet-easy/0.2.0/customized-app/page-404">[<code>Ver más</code>]</a></li>
+<li><code>view</code>: Decorador para añadir controles personalizados a la aplicación, la función decoradora devolverá el <code>Viewsy</code>. Se obtendrá en funciones con el parámetro <code>data:fs.Datasy</code> y se puede añadir a la vista de página decorada con <code>data.view</code>. <a href="/flet-easy/0.2.0/customized-app/control-view-configuration/">[<code>Ver más</code>]</a></li>
+<li><code>config_event_handler</code>: Decorador para añadir configuraciones de <a href="https://flet.dev/docs/controls/page/#events">eventos de página de flet</a>. <a href="/flet-easy/0.2.0/customized-app/events/">[<code>Ver más</code>]</a></li>
+</ul>
+<h2 id="como-crear-una-nueva-pagina">¿Cómo crear una nueva página?<a class="headerlink" href="#como-crear-una-nueva-pagina" title="Permanent link">&para;</a></h2>
+<p>Para crear una nueva página usas un decorador que proporciona el objeto creado por la clase <code>FletEasy</code>, que es <code>page</code> que te permite ingresar ciertos parámetros.</p>
+<h3 id="decorador-page">Decorador <strong><code>page</code></strong><a class="headerlink" href="#decorador-page" title="Permanent link">&para;</a></h3>
+<p>Para añadir páginas, se requieren los siguientes parámetros:</p>
+<ul>
+<li><code>route</code>: cadena de texto de la url, por ejemplo(<code>'/FletEasy'</code>)</li>
+<li><code>title</code>: Define el título de la página</li>
+<li><code>page_clear</code>: Elimina las páginas de la lista <code>page.views</code> de flet (opcional)</li>
+<li><code>share_data</code>: Es un valor booleano, útil si quieres compartir datos entre páginas, de una forma más restringida (opcional). <a href="/flet-easy/0.2.0/data-sharing-between-pages/">[<code>Ver más</code>]</a></li>
+<li><code>protected_route</code>: Protege la ruta de la página, según la configuración del decorador <code>login</code> de la clase <code>FletEasy</code> (opcional). <a href="/flet-easy/0.2.0/customized-app/route-protection/">[<code>Ver más</code>]</a></li>
+<li><code>custom_params</code>: Para añadir validación de parámetros en la url personalizada usando un diccionario, donde la clave es el nombre de validación del parámetro y el valor es la función personalizada que debe devolver un valor booleano. <a href="/flet-easy/0.2.0/dynamic-routes/#custom-validation">[<code>Ver más</code>]</a></li>
+<li><code>middleware</code>: Actúa como intermediario entre diferentes componentes de software, interceptando y procesando solicitudes y respuestas. Permiten añadir funcionalidades a una aplicación de forma flexible y modular. Se puede usar tanto en la app en general como en cada una de las páginas (opcional). <a href="/flet-easy/0.2.0/middleware/#for-each-page">[<code>Ver más</code>]</a></li>
+</ul>
+<p>[El código de ejemplo se mantiene igual]</p>
+<h2 id="datasy-data">Datasy (data)<a class="headerlink" href="#datasy-data" title="Permanent link">&para;</a></h2>
+<details class="warning" open="open">
+<summary>Disponible desde la versión 0.2.4</summary>
+<ul>
+<li><code>history_routes</code>: Obtener el historial de las rutas</li>
+<li><code>go_back()</code>: Método para volver a la ruta anterior</li>
+</ul>
+</details>
+<p>La función decorada siempre recibirá un parámetro que es <code>data</code> (puede ser cualquier nombre), que creará un objeto de tipo <code>Datasy</code> de <code>Flet-Easy</code>.</p>
+<p>Esta clase tiene los siguientes atributos para acceder a sus datos:</p>
+<ul>
+<li><code>page</code>: Obtenemos los valores de la página proporcionados por <a href="https://flet.dev/docs/controls/page"><code>Flet</code></a></li>
+<li><code>url_params</code>: Obtenemos un diccionario con los valores pasados a través de la url</li>
+<li><code>view</code>: Obtener un objeto <code>View</code> de <a href="https://flet.dev/docs/controls/view"><code>Flet</code></a>, previamente configurado con el decorador <a href="/flet-easy/0.2.0/customized-app/control-view-configuration/"><code>View</code></a> de <code>Flet-Easy</code></li>
+<li><code>route_prefix</code>: Valor ingresado en los parámetros de la clase <code>FletEasy</code> para crear el objeto app</li>
+<li><code>route_init</code>: Valor ingresado en los parámetros de la clase <code>FletEasy</code> para crear el objeto app</li>
+<li>
+<p><code>route_login</code>: Valor ingresado en los parámetros de la clase <code>FletEasy</code> para crear el objeto app</p>
+</li>
+<li>
+<p><code>share</code>: Se utiliza para poder almacenar y obtener valores en la sesión del cliente, la utilidad es poder tener mayor control en las páginas en las que se quiere compartir, para ello se debe usar el parámetro <code>share_data</code> del decorador <code>page</code>. Los métodos a usar son similares a <a href="https://flet.dev/docs/guides/python/session-storage"><code>page.session</code></a>. <a href="/flet-easy/0.2.0/data-sharing-between-pages/">[<code>Ver más</code>]</a>
+  Además de eso obtienes algunos métodos extra:</p>
+</li>
+<li>
+<p><code>contains</code>: Devuelve un booleano, es útil para saber si hay datos compartidos</p>
+</li>
+<li><code>get_values</code>: Obtener una lista de todos los valores compartidos</li>
+<li>
+<p><code>get_all</code>: Obtener el diccionario de todos los valores compartidos</p>
+</li>
+<li>
+<p><code>on_keyboard_event</code>: obtener valores de eventos para usar en la página. <a href="/flet-easy/0.2.0/events/keyboard-event/">[<code>Ver más</code>]</a></p>
+</li>
+<li><code>on_resize</code>: obtener valores de eventos para usar en la página. <a href="/flet-easy/0.2.0/events/on-resize/">[<code>Ver más</code>]</a></li>
+<li><code>route</code>: ruta proporcionada por el evento de ruta, es útil cuando se usan middlewares para comprobar si la ruta es accesible</li>
+<li><code>history_routes</code>: Obtener el historial de las rutas</li>
+</ul>
+<h3 id="metodos_1">Métodos<a class="headerlink" href="#metodos_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>logout()</code>: método para cerrar sesiones de todas las secciones en el navegador (almacenamiento del cliente). <a href="/flet-easy/0.2.0/customized-app/route-protection/#logout">[<code>Ver más</code>]</a></li>
+<li><code>login()</code>: Método para crear sesiones de todas las secciones en el navegador (almacenamiento del cliente). <a href="/flet-easy/0.2.0/customized-app/route-protection/#login">[<code>Ver más</code>]</a></li>
+<li><code>go()</code>: Método para cambiar la ruta de la aplicación (recomendado usar este en lugar de <code>page.go</code> para evitar errores de ruta)</li>
+<li><code>redirect()</code>: Para redirigir a una ruta antes de que se cargue la página, se usa en middleware</li>
+<li><code>go_back()</code>: Método para volver a la ruta anterior</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+</div>
+<p>Ahora <code>page.go()</code> y <code>data.go()</code> funcionan de manera similar para ir a una página (<code>View</code>), la única diferencia es que <code>data.go()</code> comprueba las redirecciones de url cuando se usa <code>data.redirect()</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">logout y login</p>
+</div>
+<p>Compatible con android, ios, windows y web.</p>
+<h2 id="demo_1">🎬 <strong>Demo</strong><a class="headerlink" href="#demo_1" title="Permanent link">&para;</a></h2>
+<p><img alt="alt video" src="assets/gifs/use-example.gif" title="ejemplo de uso" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../begin/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Comenzar">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Comenzar
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../run-the-app/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Ejecutar la aplicación">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Ejecutar la aplicación
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; <span id="dynamic-year"></span> Daxexs
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Daxexs/flet-easy" target="_blank" rel="noopener" title="Repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.path", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "navigation.footer", "content.code.copy", "content.code.select", "content.code.annotate", "content.action.edit", "language.selector"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../assets/js/dynamic-year.js"></script>
+      
+    
+  </body>
+</html>
